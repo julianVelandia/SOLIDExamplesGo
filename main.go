@@ -12,4 +12,8 @@ func main() {
 
 	//Principio de Abierto/Cerrado
 	abierto_cerrado.MakeMenu()
+	abierto_cerrado.MakeMenuWithoutPrincipleApplied()
+
+	//Principio Sustitución de Liskov
+
 }
