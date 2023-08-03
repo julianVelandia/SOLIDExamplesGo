@@ -1,1 +1,1 @@
-package segregacion_interfaz
+package abierto_cerrado

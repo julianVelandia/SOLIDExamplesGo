@@ -1,1 +1,1 @@
-package segregacion_interfaz
+package inversion_dependencias

@@ -1,1 +1,1 @@
-package segregacion_interfaz
+package sustitucion_liskov
