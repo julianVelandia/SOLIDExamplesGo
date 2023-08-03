@@ -12,7 +12,7 @@ const (
 	TimeInteriorProcess = 4
 )
 
-func productionLineWithoutPrinciple() {
+func ProductionLineWithoutPrinciple() {
 	fmt.Println("Se inicia la línea de ensamblaje")
 	for currentCar := 0; currentCar < NumberCarsToProduce; currentCar++ {
 		fmt.Printf("Se inicia el ensamblaje del carro: %d\n", currentCar+1)
@@ -35,5 +35,5 @@ func productionLineWithoutPrinciple() {
 }
 
 func main() {
-	productionLineWithoutPrinciple()
+	ProductionLineWithoutPrinciple()
 }

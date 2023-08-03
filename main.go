@@ -1,7 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"github.com/julianVelandia/EDteam/SOLIDyHexagonal/SOLIDExamplesGo/responsabilidad_unica"
+)
 
 func main() {
-	fmt.Println("hola mundo")
+	//Principio de Responsabilidad única
+	responsabilidad_unica.ProductionLineWithoutPrinciple()
+	responsabilidad_unica.ProductionLineWithPrinciple()
 }
