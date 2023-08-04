@@ -22,7 +22,7 @@ func (d Duck) Swim() string {
 }
 
 func (d Duck) QuackAndSwim() (string, error) {
-	return fmt.Sprintf(d.Quack(), d.Swim()), nil
+	return d.Quack() + d.Swim(), nil
 }
 
 type ToyDuck struct {
@@ -35,7 +35,7 @@ func (td ToyDuck) Quack() string {
 }
 
 func MakeDucksWithPrincipleApplied() {
-	realDuck := Duck{}
+	realDuck := Duck{Animal{true}}
 
 	fmt.Println("El pato real parece animal? : ", realDuck.LooksLikeAnAnimal)
 	fmt.Println("El pato real está nadando? : ", realDuck.Swim())
@@ -47,7 +47,7 @@ func MakeDucksWithPrincipleApplied() {
 		fmt.Println("El pato real hace Quack y nada? : ", realDuckCanQuackAndSwim)
 	}
 
-	toyDuck := ToyDuck{}
+	toyDuck := ToyDuck{Animal{true}, true}
 
 	fmt.Println("El pato de juguete parece animal? : ", toyDuck.LooksLikeAnAnimal)
 	fmt.Println("El pato de juguete hace Quack? : ", toyDuck.Quack())
