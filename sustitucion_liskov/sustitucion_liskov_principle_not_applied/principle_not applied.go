@@ -1,11 +1,16 @@
-package sustitucion_liskov
+package sustitucion_liskov_principle_not_applied
 
 import (
+	"errors"
 	"fmt"
 )
 
 type Animal struct {
 	LooksLikeAnAnimal bool
+}
+
+func (a Animal) Swim() string {
+	return "El animal está nadando"
 }
 
 type Duck struct {
@@ -16,7 +21,6 @@ func (d Duck) Quack() string {
 	return "El pato hace Quack!"
 }
 
-// Este método es de Duck, no de Animal
 func (d Duck) Swim() string {
 	return "El pato está nadando"
 }
@@ -27,14 +31,23 @@ func (d Duck) QuackAndSwim() (string, error) {
 
 type ToyDuck struct {
 	Animal
-	HaveBatteries bool
 }
 
 func (td ToyDuck) Quack() string {
 	return "El pato hace Quack!"
 }
 
-func MakeDucksWithPrincipleApplied() {
+func (td ToyDuck) Swim() string {
+	panic("Un pato de juguete no puede nadar")
+}
+
+func (td ToyDuck) QuackAndSwim() (string, error) {
+	//Retornará un error
+	errTxt := "un pato de juguete no puede nadar, es un comportamiento inesperado"
+	return errTxt, errors.New(errTxt)
+}
+
+func MakeDucksWithOutPrincipleApplied() {
 	realDuck := Duck{}
 
 	fmt.Println("El pato real parece animal? : ", realDuck.LooksLikeAnAnimal)
@@ -50,7 +63,13 @@ func MakeDucksWithPrincipleApplied() {
 	toyDuck := ToyDuck{}
 
 	fmt.Println("El pato de juguete parece animal? : ", toyDuck.LooksLikeAnAnimal)
+	// El método nadar en toyDuck me retorna Panic
 	fmt.Println("El pato de juguete hace Quack? : ", toyDuck.Quack())
-	fmt.Println("El pato de juguete tiene baterias? : ", toyDuck.HaveBatteries)
 
+	toyDuckCanQuackAndSwim, err := toyDuck.QuackAndSwim()
+	if err != nil {
+		fmt.Println("El pato de juguete No puede hacer Quack y nadar : ", err.Error())
+	} else {
+		fmt.Println("El pato de juguete hace Quack y nada? : ", toyDuckCanQuackAndSwim)
+	}
 }
