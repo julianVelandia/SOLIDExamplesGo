@@ -26,7 +26,8 @@ func paintProcess(currentCar int) {
 func tireProcess(currentCar int) {
 	formatProcessMessage(true, "ensamble de los neumáticos", currentCar)
 	for currentTire := 0; currentTire < 4; currentTire++ {
-		formatProcessMessage(true, fmt.Sprintf("Ensamble del neumático %d", currentTire+1), currentCar, "\t")
+		fmt.Print("\t")
+		formatProcessMessage(true, fmt.Sprintf("Ensamble del neumático %d", currentTire+1), currentCar)
 		time.Sleep(TimeTireProcess * time.Second)
 	}
 	formatProcessMessage(false, "ensamble de los neumáticos", currentCar)
@@ -38,12 +39,12 @@ func interiorProcess(currentCar int) {
 	formatProcessMessage(false, "ensamble del interior", currentCar)
 }
 
-func formatProcessMessage(isStart bool, process string, currentCar int, tab ...string) {
+func formatProcessMessage(isStart bool, process string, currentCar int) {
 	var prefix string
 	if isStart {
 		prefix = "Inicia"
 	} else {
 		prefix = "Finaliza"
 	}
-	fmt.Printf("%s proceso de %s, Carro: %d%s\n", prefix, process, currentCar+1, tab)
+	fmt.Printf("%s proceso de %s, Carro: %v\n", prefix, process, currentCar+1)
 }

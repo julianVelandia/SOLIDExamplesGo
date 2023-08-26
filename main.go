@@ -5,6 +5,8 @@ import (
 )
 
 func main() {
+	segregacion_interfaz.MakeDucksWithPrincipleApplied()
+
 	/*
 		//Principio de Responsabilidad única
 		responsabilidad_unica.ProductionLineWithoutPrinciple()
@@ -18,8 +20,7 @@ func main() {
 		sustitucion_liskov_principle_not_applied.MakeDucksWithOutPrincipleApplied()
 		sustitucion_liskov.MakeDucksWithPrincipleApplied()
 
-
+		//Segregación de la interfaz
+		segregacion_interfaz.MakeDucksWithPrincipleApplied()
 	*/
-	//Segregación de la interfaz
-	segregacion_interfaz.MakeDucksWithPrincipleApplied()
 }
