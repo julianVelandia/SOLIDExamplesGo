@@ -1,6 +1,7 @@
 # SOLIDExamplesGo
 
 Examples of the 5 SOLID principles in Golang, for the course SOLID Principles and Hexagonal Architecture with Python and Golang
+
 Link: https://ed.team/cursos/solid
 
 * Brief explanation
@@ -18,7 +19,7 @@ Link: https://ed.team/cursos/solid
 Bad abstraction
 
 
-![image](https://github.com/julianVelandia/SOLIDExamplesGo/assets/52173621/5921a398-df12-4d66-a705-614d008c13f2)
+<img src="https://github.com/julianVelandia/SOLIDExamplesGo/assets/52173621/5921a398-df12-4d66-a705-614d008c13f2" alt="image" width="50%">
 
 
 Improved abstraction
